@@ -1,9 +1,9 @@
 </div>
 <footer>
     <div class="container">
-   
+
     </div>
-</footer>
+</footer>   
 <?php wp_footer(); ?>
 </body>
 </html>
