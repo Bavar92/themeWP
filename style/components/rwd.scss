@@ -1,0 +1,153 @@
+//Responsive Web Design
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+  #menuOpen {
+    display: block;
+    &.opened {
+      & + #mainMenu {
+        @include transform(translateX(0));
+      }
+    }
+  }
+  #mainMenu {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    @include transform(translateX(100%));
+    @include transition();
+    background: rgba(26, 26, 26, 0.95);
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow-y: auto;
+    ul {
+      li {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        a {
+          margin: 0;
+          color: #fff;
+          font-size: 18px;
+          padding: 15px 3%;
+          border-bottom: 1px solid #000;
+          position: relative;
+          display: block;
+          text-decoration: none;
+          &:after {
+            display: none;
+          }
+        }
+        &:hover > a {
+          background: none;
+          color: #fff;
+        }
+        &.current-menu-item > a {
+          background: $bg;
+          color: #fff;
+        }
+        &.menu-item-has-children > a {
+          &:after {
+            display: none;
+          }
+        }
+        span {
+          width: 60px;
+          background: $bg;
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          cursor: pointer;
+          &:before {
+            content: "";
+            @include center();
+            background: #fff;
+            width: 18px;
+            height: 2px;
+            @include transition();
+          }
+          &:after {
+            content: "";
+            @include center();
+            background: #fff;
+            width: 2px;
+            height: 18px;
+            @include transition();
+          }
+          &.active {
+            &:after {
+              opacity: 0;
+            }
+          }
+        }
+        ul {
+          margin-top: 0;
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+          position: static;
+          background: none;
+          display: none;
+          @include transition(none);
+          li {
+            display: inline-block;
+            float: none;
+            width: 100%;
+            padding-bottom: 0;
+            a {
+              margin: 0;
+              color: #fff;
+              font-size: 18px;
+              padding: 10px 6%;
+              border-bottom: 1px solid #000;
+              position: relative;
+              text-decoration: none;
+            }
+            span {
+              background: none;
+            }
+            &:hover a {
+              background: none;
+              color: #fff;
+            }
+            &.current-menu-item a {
+              background: $bg;
+              color: #fff;
+            }
+            ul {
+              li {
+                a {
+                  font-size: 16px;
+                  font-style: italic;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .alignleft, .aligncenter, .alignright {
+    float: none;
+    margin: 0 auto 20px;
+  }
+
+  .alignnone {
+    margin: 0 0 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 479px) {
+
+}
+
+@media screen and (max-width: 320px) {
+
+}

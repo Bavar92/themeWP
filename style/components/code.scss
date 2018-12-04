@@ -1,0 +1,126 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  padding-bottom: 20px;
+  line-height: 1.2;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+p {
+  padding-bottom: 20px;
+  line-height: 1.5;
+}
+
+a {
+  color: $bg;
+  text-decoration: none;
+  @include transition();
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 100;
+}
+
+@media screen and (min-width: 1025px) {
+  #mainMenu {
+    > ul {
+      font-size: 0;
+      > li {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        > a {
+          font-size: 14px;
+          display: block;
+        }
+        &:hover > a, &.current-menu-item > a {
+          text-decoration: none;
+        }
+        &:hover > ul {
+          margin-top: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+        ul {
+          margin-top: 20px;
+          opacity: 0;
+          visibility: hidden;
+          width: 270px;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          background: $bg;
+          font-size: 14px;
+          @include transition();
+          li {
+            position: relative;
+            a {
+              display: block;
+              padding: 7px 18px;
+              color: #fff;
+              font-size: rem(13);
+              text-decoration: none;
+            }
+            &:hover, &.current-menu-item {
+              > a {
+                color: $bg;
+                background: #fff;
+              }
+            }
+            &:hover ul {
+              visibility: visible;
+              opacity: 1;
+              margin-top: 0;
+            }
+            ul {
+              left: 270px;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  ul {
+    margin: 0 0 20px 15px;
+    li {
+      padding: 5px 0 5px 15px;
+      position: relative;
+      &:before {
+        content: "";
+        background: $bg;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: rem(15);
+        left: 0;
+      }
+    }
+  }
+}
+
+footer {
+
+}

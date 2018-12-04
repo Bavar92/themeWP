@@ -1,0 +1,122 @@
+//MIXINS
+@mixin box-shadow($styles) {
+  -webkit-box-shadow: $styles;
+  -moz-box-shadow: $styles;
+  -ms-box-shadow: $styles;
+  -o-box-shadow: $styles;
+  box-shadow: $styles;
+}
+
+@mixin transition($property: all, $duration: .4s, $easing: ease) {
+  -webkit-transition: $property $duration $easing;
+  -moz-transition: $property $duration $easing;
+  -ms-transition: $property $duration $easing;
+  -o-transition: $property $duration $easing;
+  transition: $property $duration $easing;
+}
+
+@mixin transform($action, $backface: false) {
+  @if $backface {
+    -webkit-transform: $action;
+    -moz-transform: $action;
+    -ms-transform: $action;
+    -o-transform: $action;
+    transform: $action;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  } @else {
+    -webkit-transform: $action;
+    -moz-transform: $action;
+    -ms-transform: $action;
+    -o-transform: $action;
+    transform: $action;
+  }
+}
+
+@mixin user-select($select) {
+  -webkit-touch-callout: $select;
+  -webkit-user-select: $select;
+  -khtml-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+@mixin backface-visibility($back: hidden) {
+  -webkit-backface-visibility: $back;
+  -moz-backface-visibility: $back;
+  backface-visibility: $back;
+}
+
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moztransform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($delay, $duration, $animation) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  $base: $font-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}

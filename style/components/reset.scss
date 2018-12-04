@@ -1,0 +1,435 @@
+//RESET
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  min-width: 1px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+}
+
+a, a:hover, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: 0 none
+}
+
+ol {
+  list-style: decimal inside;
+  margin-bottom: 20px;
+  li {
+    padding: 5px 0 5px 15px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+a img, fieldset, hr {
+  border: 0;
+}
+
+mark {
+  background: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  vertical-align: middle;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="search"], select, textarea {
+  @include transition();
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+input[type="submit"], input[type="button"], button, .button {
+  @include transition();
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: none;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #707070;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #707070;
+  opacity: 1;
+}
+
+hr {
+  clear: both;
+  overflow: hidden;
+  display: block;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section, summary, main {
+  display: block;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 30px 10px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 10px 30px;
+}
+
+.aligncenter {
+  margin: 0 auto 20px;
+}
+
+.alignnone {
+  margin: 0 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.valign {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 94%
+}
+
+.vfix {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0
+}
+
+//Fullframe
+.fullframe {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 56.5%;
+  position: relative;
+  z-index: 0;
+  iframe, object, embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1
+  }
+}
+
+//SELECT
+.selbel_w {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-family: $f;
+  height: $inputH;
+  select {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    + span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      color: #555;
+      padding: 0 10px;
+      border-radius: 5px;
+      border: 1px solid #eee;
+      line-height: $inputH;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 5px 0 5px;
+        border-color: #555 transparent transparent transparent;
+        position: absolute;
+        right: 13px;
+        top: 16px;
+      }
+      &.err {
+        border-color: #ef4036
+      }
+    }
+    option {
+      padding: 5px
+    }
+  }
+}
+
+//CONTACT FORM
+div.wpcf7 {
+  .wpcf7-form-control-wrap {
+    display: block !important;
+    margin-bottom: 20px;
+    clear: both;
+  }
+  .wpcf7-not-valid-tip {
+    background: #fff;
+    border: 1px solid #FF0000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    font-family: $f;
+    height: $inputH;
+    line-height: $inputH;
+    padding: 0 10px;
+    text-align: left;
+  }
+  .wpcf7-response-output {
+    width: 100%;
+    background: #fff;
+    margin: 10px 0 0 0;
+    font-family: $f;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 5px 20px;
+    text-align: center;
+  }
+  .ajax-loader {
+    display: none;
+  }
+}
+
+//PAGE 404
+.error404 {
+  .content {
+    text-align: center;
+    h1 {
+      font-size: rem(55);
+      line-height: 1.2;
+      padding-bottom: 40px;
+      font-weight: 400;
+      span {
+        font-size: rem(80);
+        line-height: 1.2;
+        color: $bg;
+        font-weight: 700;
+      }
+    }
+    p {
+      font-size: rem(18);
+    }
+  }
+}
+
+//MENU BUTTON
+$line: 4px;
+// The thickness of the button lines, also need to improve -> &:after {top: ?px} !
+$line-position: 18px;
+// The spacing between lines, also need to improve -> &:after {top: ?px} !
+$button-color: #fff;
+// The color of button
+#menuOpen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  height: 50px;
+  display: none;
+  z-index: 100;
+  &.opened {
+    span {
+      &:before, &:after {
+        top: 0;
+        left: 0;
+        right: 0;
+        background: $button-color;
+        @include box-shadow(none);
+      }
+      &:before {
+        @include backface-visibility();
+        @include transform(rotate(-45deg) translate(-7px, 7px));
+      }
+      &:after {
+        @include backface-visibility();
+        @include transform(rotate(45deg) translate(7px, 7px));
+      }
+    }
+  }
+  p {
+    margin-left: 3%;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding-bottom: 0;
+  }
+  span {
+    @include center(false, true);
+    right: 3%;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    z-index: 300;
+    @include transition();
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $line;
+      box-shadow: 0 $line 0 0 $button-color, 0 $line-position 0 0 $button-color;
+      -webkit-box-shadow: 0 $line 0 0 $button-color, 0 $line-position 0 0 $button-color;
+      -moz-box-shadow: 0 $line 0 0 $button-color, 0 $line-position 0 0 $button-color;
+      @include transition();
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 7px; // Need to improve if both $line-thickness and $line-position changed !
+      height: $line;
+      @include box-shadow(0 $line 0 0 $button-color);
+    }
+  }
+}
+
+html {
+  font: 400 #{$font-base}/1.5714 $f, sans-serif;
+}
+
+body {
+  color: $c;
+  @include flex-direction(column);
+  @include flexbox();
+  min-height: 100vh;
+}
+
+#main {
+  overflow: hidden;
+  @include flex(1, 0, auto);
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: $w;
+  max-width: 94%;
+  position: relative;
+}
+
+.flex {
+  @include flexbox;
+  @include justify-content(space-between);
+}
+
+.start {
+  @include flexbox;
+  @include justify-content(flex-start);
+}
+
+.end {
+  @include flexbox;
+  @include justify-content(flex-end);
+}
+
+.around {
+  @include flexbox;
+  @include justify-content(space-around);
+}
+
+.alc {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+}
+
+.alstart {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+}
+
+.alend {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(flex-end);
+}
+
+.cover {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="search"], input[type="password"], textarea {
+  height: $inputH;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 0 rem(20);
+  font-family: $f;
+  font-size: rem(14);
+  &:focus {
+    border-color: $bg;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  padding: 12px rem(20);
+}
+
+.button, .submit {
+  display: inline-block;
+  line-height: rem(40);
+  padding: 0 rem(20);
+  font-size: rem(14);
+  background: $bg;
+  color: #fff;
+  font-family: $f;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background: $bg2;
+    text-decoration: none;
+  }
+}
