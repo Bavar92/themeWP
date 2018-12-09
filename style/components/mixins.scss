@@ -59,12 +59,12 @@
   } @else if ($horizontal) {
     left: 50%;
     -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   } @else if ($vertical) {
     top: 50%;
     -webkit-transform: translate(0, -50%);
-    -moztransform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
     transform: translate(0, -50%);
   }
 }
@@ -80,6 +80,19 @@
     @content;
   }
   @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin placeholder{
+  &::-webkit-input-placeholder{
+    @content;
+  }
+  &::-moz-placeholder{
+    opacity:1;
+    @content;
+  }
+  &:-ms-input-placeholder{
     @content;
   }
 }

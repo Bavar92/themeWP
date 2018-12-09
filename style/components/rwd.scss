@@ -8,6 +8,7 @@
     &.opened {
       & + #mainMenu {
         @include transform(translateX(0));
+        z-index: 100;
       }
     }
   }

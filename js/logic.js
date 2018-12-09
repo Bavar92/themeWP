@@ -5,7 +5,6 @@ $(document).ready(function () {
     $("#menuOpen").click(function (e) {
         $(this).toggleClass("opened");
     });
-
     if (width <= 1024) {
         $("#mainMenu .menu-item-has-children > a").append("<span></span>");
         $("#mainMenu .menu-item-has-children span").click(function () {
@@ -29,7 +28,9 @@ $(document).ready(function () {
     });
 
     if (!$(".woocommerce-checkout")[0]) {
-        $("select").selbel();
+        $('select').selectric({
+            disableOnMobile: false
+        });
         $(".wpcf7-form select option:first-of-type").attr('selected', 'true').attr('disabled', 'disabled').attr('value', '0');
     }
 

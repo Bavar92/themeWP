@@ -216,6 +216,11 @@ function my_theme_register_required_plugins()
             'required' => false,
         ),
         array(
+            'name' => 'Jquery Validation For Contact Form 7',
+            'slug' => 'jquery-validation-for-contact-form-7',
+            'required' => false,
+        ),
+        array(
             'name' => 'Advanced Custom Fields: PRO',
             'slug' => 'advanced-custom-fields-pro',
             'source' => get_stylesheet_directory() . '/include/plugins/advanced-custom-fields-pro.zip',
