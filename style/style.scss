@@ -7,6 +7,10 @@ $bg2: lighten(#0C59AF, 20%);
 $inputH: 40px;
 $font-base: 14px;
 $f: "Open Sans";
+$row: $w;
+$desktop: 1024px;
+$table: 768px;
+$mobile: 479px;
 
 @import 'components/flexbox';
 @import 'components/reset';

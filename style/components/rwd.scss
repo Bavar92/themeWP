@@ -1,5 +1,5 @@
 //Responsive Web Design
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $desktop) {
   html {
     font-size: 14px;
   }
@@ -141,14 +141,10 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $table) {
 
 }
 
 @media screen and (max-width: 479px) {
-
-}
-
-@media screen and (max-width: 320px) {
 
 }
