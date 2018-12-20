@@ -82,6 +82,18 @@ hr {
 article, aside, details, figcaption, figure, footer, header, nav, section, summary, main {
   display: block;
 }
+.part {
+  -webkit-flex-basis: 50%;
+  -moz-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+.desktop_hide {
+  display: none;
+}
+.mobile_hide {
+  display: block;
+}
 .alignleft {
   float: left;
   margin: 0 30px 10px 0;
@@ -142,6 +154,9 @@ div.wpcf7 .wpcf7-response-output {
   line-height: 20px;
   padding: 5px 20px;
   text-align: center;
+}
+div.wpcf7 .ajax-loader {
+  display: none;
 }
 .error404 .content {
   text-align: center;
@@ -3354,5 +3369,16 @@ header {
   }
   .alignnone {
     margin: 0 0 20px;
+  }
+  .btnBox {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .desktop_hide {
+    display: block;
+  }
+  .mobile_hide {
+    display: none;
   }
 }
