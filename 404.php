@@ -5,9 +5,9 @@
                 <div class="cog_container">
                     <div class="cog_overlay">
                     </div>
-                    <span class="i-cog cog_icon cog_top"></span>
-                    <span class="i-cog cog_icon cog_left"></span>
-                    <span class="i-cog cog_icon cog_right"></span>
+                    <span class="fas fa-cog cog_icon cog_top"></span>
+                    <span class="fas fa-cog cog_icon cog_left"></span>
+                    <span class="fas fa-cog cog_icon cog_right"></span>
                 </div>
                 <h1><i>404</i> Page Not Found</h1>
                 <p>The article you were looking for was not found, but maybe try looking again!</p>
@@ -31,14 +31,14 @@
         .error404 .cog_top {
             top: 0;
             left: 50px;
-            animation: simple_rotate 10s infinite linear;
+            animation: simple_rotate 10s 0s infinite linear;
         }
         .error404 .cog_top:before {
-            font-size: 150px;
+            font-size: 100px;
             color: #999;
         }
         .error404 .cog_left {
-            top: 114px;
+            top: 97px;
             left: 35px;
             -webkit-transform: rotate(48deg);
             -ms-transform: rotate(48deg);
@@ -47,16 +47,18 @@
             color: #666;
         }
         .error404 .cog_left:before {
-            font-size: 110px;
+            font-size: 100px;
         }
         .error404 .cog_right {
-            top: 175px;
-            left: 118px;
+            top: 134px;
+            left: 127px;
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
             transform: rotate(0deg);
-            animation: rotate_right 10.4s 0.4s infinite linear;
+            animation: rotate_right 10s 0.2s infinite linear;
         }
         .error404 .cog_right:before {
-            font-size: 75px;
+            font-size: 100px;
             color: #444;
         }
         .error404 .cog_container {
@@ -85,12 +87,12 @@
         }
         @keyframes simple_rotate {
             from {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+                -webkit-transform: rotate(30deg);
+                transform: rotate(30deg);
             }
             to {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+                -webkit-transform: rotate(390deg);
+                transform: rotate(390deg);
             }
         }
         @keyframes rotate_left {

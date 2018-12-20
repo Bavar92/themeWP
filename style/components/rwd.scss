@@ -139,10 +139,19 @@
   .alignnone {
     margin: 0 0 20px;
   }
+  .btnBox {
+    text-align: center;
+  }
+
 }
 
 @media screen and (max-width: $table) {
-
+  .desktop_hide {
+    display: block;
+  }
+  .mobile_hide {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 479px) {

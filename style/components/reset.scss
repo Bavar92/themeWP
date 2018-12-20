@@ -93,6 +93,17 @@ article, aside, details, figcaption, figure, footer, header, nav, section, summa
   display: block;
 }
 
+.part {
+  @include flex-basis(50%);
+}
+
+.desktop_hide {
+  display: none;
+}
+.mobile_hide {
+  display: block;
+}
+
 .alignleft {
   float: left;
   margin: 0 30px 10px 0;
@@ -167,7 +178,7 @@ div.wpcf7 {
     text-align: center;
   }
   .ajax-loader {
-    //display: none;
+    display: none;
   }
 }
 
