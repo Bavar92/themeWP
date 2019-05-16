@@ -1,4 +1,29 @@
 //MIXINS
+
+@mixin for-size($size) {
+  @if $size == xs {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (max-width: $table) {
+      @content;
+    }
+  } @else if $size == md {    
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $size == row {
+    @media (max-width: $row) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+}
+
 @mixin box-shadow($styles) {
   -webkit-box-shadow: $styles;
   -moz-box-shadow: $styles;
