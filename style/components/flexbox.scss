@@ -63,6 +63,10 @@
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 //%flexbox { @include flexbox; }
@@ -106,6 +110,7 @@
   -moz-flex-direction: $value;
   -ms-flex-direction: $value;
   flex-direction: $value;
+  max-width: $value;
 }
 
 // Flexbox Wrap
