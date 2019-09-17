@@ -13,6 +13,7 @@ header('X-UA-Compatible: IE=Edge');
     <meta name="HandheldFriendly" content="True"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link rel="shortcut icon" href="/">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
