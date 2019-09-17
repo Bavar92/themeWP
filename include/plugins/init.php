@@ -217,7 +217,7 @@ function my_theme_register_required_plugins()
         ),
         array(
             'name' => 'Classic Editor',
-            'slug' => 'classic-editor', 
+            'slug' => 'classic-editor',
             'required' => false,
         ),
         array(

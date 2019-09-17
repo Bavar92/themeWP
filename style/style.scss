@@ -1,13 +1,12 @@
 @import 'components/mixins';
 
-$w: 1140px;
+$row: 1140px;
 $c: #333333;
 $bg: #0C59AF;
-$bg2: lighten(#0C59AF, 20%);
+$bg2: .8;
 $inputH: 40px;
 $font-base: 14px;
 $f: "Open Sans";
-$row: $w;
 $desktop: 1024px;
 $table: 768px;
 $mobile: 479px;

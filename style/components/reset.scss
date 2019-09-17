@@ -29,10 +29,9 @@ ol {
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 7px;
+  width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
   background-color: rgba(0, 0, 0, .5);
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
@@ -306,7 +305,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: $w;
+  width: $row;
   max-width: 94%;
   position: relative;
 }
@@ -386,7 +385,7 @@ textarea {
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    background: $bg2;
+    opacity: $bg2;
     text-decoration: none;
   }
 }
