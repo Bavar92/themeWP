@@ -5,7 +5,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header('X-UA-Compatible: IE=Edge');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <title><?php seo_title(); ?></title>
